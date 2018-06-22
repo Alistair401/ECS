@@ -5,3 +5,5 @@
 #else  
 #define ECS_API __declspec(dllimport)   
 #endif  
+
+#define MAX_COMPONENTS 32
