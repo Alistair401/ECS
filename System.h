@@ -2,6 +2,7 @@
 namespace ECS {
 	class System
 	{
+	public:
 		bool IsActive() {
 
 		}
@@ -9,6 +10,12 @@ namespace ECS {
 		void SetActive(bool active) {
 
 		}
+
+		virtual void Update(float dt) {
+
+		}
+	private:
+
 	};
 }
 

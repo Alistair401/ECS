@@ -4,19 +4,15 @@
 namespace ECS {
 	EntityIdentifier Allocator::CreateEntity()
 	{
-		for (size_t i = 0; i < MAX_COMPONENTS; i++)
-		{
-			component_array[i].emplace_back(nullptr);
-		}
-		return next_id++;
+		EntityIdentifier id = id_generator.Generate();
+		assert(entity_component_masks[id].none());
+		return id;
 	}
 
-	void Allocator::SetToDestroyed(EntityIdentifier entity)
+	void Allocator::DestroyEntity(EntityIdentifier id)
 	{
-	}
-
-	void Allocator::RemoveDestroyedEntities()
-	{
+		entity_component_masks[id].reset();
+		id_generator.Free(id);
 	}
 }
 

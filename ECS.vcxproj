@@ -154,7 +154,7 @@
     <ClInclude Include="Allocator.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ECS.h" />
-    <ClInclude Include="Entity.h" />
+    <ClInclude Include="IDGenerator.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="targetver.h" />
@@ -164,7 +164,7 @@
     <ClCompile Include="Allocator.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ECS.cpp" />
-    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="IDGenerator.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
