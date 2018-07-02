@@ -10,6 +10,6 @@ namespace ECS {
 
 	using ComponentBitset = std::bitset<MAX_COMPONENTS>;
 
-	using EntityIdentifier = unsigned int;
-	using ComponentIdentifier = unsigned int;
+	using EntityID = unsigned int;
+	using ComponentID = unsigned int;
 }

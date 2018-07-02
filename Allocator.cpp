@@ -2,14 +2,14 @@
 #include "Allocator.h"
 
 namespace ECS {
-	EntityIdentifier Allocator::CreateEntity()
+	EntityID Allocator::CreateEntity()
 	{
-		EntityIdentifier id = id_generator.Generate();
+		EntityID id = id_generator.Generate();
 		assert(entity_component_masks[id].none());
 		return id;
 	}
 
-	void Allocator::DestroyEntity(EntityIdentifier id)
+	void Allocator::DestroyEntity(EntityID id)
 	{
 		entity_component_masks[id].reset();
 		id_generator.Free(id);

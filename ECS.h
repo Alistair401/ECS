@@ -16,30 +16,30 @@ namespace ECS {
 
 		}
 
-		EntityIdentifier CreateEntity() {
+		EntityID CreateEntity() {
 			return allocator.CreateEntity();
 		}
 
-		void DestroyEntity(EntityIdentifier entity) {
+		void DestroyEntity(EntityID entity) {
 			allocator.DestroyEntity(entity);
 		}
 
 		template <typename ComponentType, typename... TArgs>
-		ComponentType& AddComponent(EntityIdentifier entity, TArgs... args) {
+		ComponentType& AddComponent(EntityID entity, TArgs... args) {
 			return allocator.AddComponent<ComponentType>(entity, std::forward<TArgs>(args)...);
 		}
 
 		template<typename ComponentType>
-		bool HasComponent(EntityIdentifier entity) {
+		bool HasComponent(EntityID entity) {
 			return allocator.HasComponent<ComponentType>();
 		}
 
 		template<typename ComponentType>
-		void RemoveComponent(EntityIdentifier entity) {
+		void RemoveComponent(EntityID entity) {
 			allocator.RemoveComponent<ComponentType>(entity);
 		}
+
 	private:
 		Allocator allocator;
-		std::vector<System> systems;
 	};
 }
