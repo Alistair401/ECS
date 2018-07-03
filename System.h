@@ -1,21 +1,13 @@
 #pragma once
+
 namespace ECS {
+	class ECS;
+
 	class System
 	{
 	public:
-		bool IsActive() {
-
-		}
-
-		void SetActive(bool active) {
-
-		}
-
-		virtual void Update(float dt) {
-
-		}
-	private:
-
+		ECS * ecs = nullptr;
+		virtual void Init() {};
 	};
 }
 
