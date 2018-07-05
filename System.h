@@ -8,7 +8,6 @@ namespace ECS {
 	public:
 		ECS * ecs = nullptr;
 		virtual void Init() {};
+		virtual void Update(float dt) {};
 	};
 }
-
-
